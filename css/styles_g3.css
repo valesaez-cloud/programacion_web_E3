@@ -176,4 +176,63 @@ footer .logo_container span {
 .error-message {
     font-size: 14px;
     display: none;
+/* --- Banner full width con overlay oscuro --- */
+.banner{
+  width: 100%;
+  min-height: 320px;
+  margin: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 12px;
+}
+.banner::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.75));
+  border-radius: 12px;
+}
+
+/* --- Subir y centrar la tarjeta sobre el banner --- */
+.login-zone{
+  margin-top: -120px;        /* la “sube” para que flote sobre el banner */
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Tarjeta / formulario (sin romper Bootstrap) --- */
+.card{
+  background: rgba(20,20,20,.92);
+  color:#eee;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.45);
+  backdrop-filter: blur(6px);
+}
+
+/* Inputs con buen foco */
+.form-label{ color:#d7d7d7; }
+.form-control{
+  background:#0f0f0f;
+  color:#f2f2f2;
+  border:1px solid #3a3a3a;
+}
+.form-control::placeholder{ color:#8b8b8b; }
+.form-control:focus{
+  border-color:#6aa0ff;
+  box-shadow:0 0 0 .2rem rgba(106,160,255,.25);
+}
+
+/* Botón principal */
+.btn-primary{
+  background:#6aa0ff;
+  border-color:#6aa0ff;
+  color:#101010;
+  font-weight:700;
+}
+.btn-primary:hover{ filter: brightness(1.08); }
+
+/* Separación del footer */
+footer{ margin-top: 32px; }
 }
