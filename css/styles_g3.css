@@ -72,7 +72,7 @@ h2 {
 
 /* Banner con imagen */
 .banner {
-    background: url('https://ledbilder.de/cdn/shop/collections/1_2_Uebersicht.jpg?v=1738255020&width=2048') no-repeat center/cover;
+    background: url("../img/banner_central.png")no-repeat center/cover;
     height: 400px;
     display: flex;
     align-items: center;
