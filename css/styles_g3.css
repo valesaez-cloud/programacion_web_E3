@@ -72,7 +72,7 @@ h2 {
 
 /* Banner con imagen */
 .banner {
-    background: url("../img/banner_central.png")no-repeat center/cover;
+    background: url("../img/banner_nuevo.jpg")no-repeat center/cover;
     height: 400px;
     display: flex;
     align-items: center;
