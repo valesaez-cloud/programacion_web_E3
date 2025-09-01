@@ -1,4 +1,4 @@
-console.log("recu_cuenta.s cargado"
+console.log("recu_cuenta.js cargado"
 
 $(function () {
   $("#recuperarForm").on("submit", 
