@@ -8,8 +8,8 @@ $(function () {
     $(".error-message").hide().text("");
     $(".form-control").removeClass("is-invalid");
 
-    // --- validar correo ---
-    const $mail = $("#mail");
+    // === validar CORREO ===
+    const $mail = $("#mail");   // <- aquí estaba el problema
     const correo = $mail.val().trim();
 
     if (correo === "") {
@@ -17,16 +17,15 @@ $(function () {
       $mail.next(".error-message").text("El correo es obligatorio.").show();
       isValid = false;
     } else {
-      // validación simple de formato
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!re.test(correo)) {
         $mail.addClass("is-invalid");
-        $mail.next(".error-message").text("Ingresa un correo válido.").show();
+        $mail.next(".error-message").text("El correo no es valido.").show();
         isValid = false;
       }
     }
 
-    // --- validar contraseña ---
+    // === validar CONTRASEÑA ===
     const $clave = $("#clave");
     const clave = $clave.val().trim();
 
@@ -34,16 +33,16 @@ $(function () {
       $clave.addClass("is-invalid");
       $clave.next(".error-message").text("La contraseña es obligatoria.").show();
       isValid = false;
-    } else if (clave.length !== 7) {         
+    } else if (clave.length < 7) {
       $clave.addClass("is-invalid");
-      $clave.next(".error-message").text("La contraseña debe tener 7 caracteres.").show();
+      $clave.next(".error-message").text("La contraseña debe tener mínimo 7 caracteres.").show();
       isValid = false;
     }
 
+    // === si todo está bien ===
     if (isValid) {
-      alert("Inicio de sesión exitoso.");
+      alert("Bienvenido, Inicio de sesión exitoso.");
       this.reset();
     }
   });
 });
-
