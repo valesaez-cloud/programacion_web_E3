@@ -25,11 +25,11 @@ $(function () {
       }
     }
 
-        // Si todo está bien
-        if (isValid) {
-          alert("Se ha enviado un enlace de recuperación al correo ingresado.");
-          this.reset();
-        }
-    });
+    // Si todo está bien
+    if (isValid) {
+      alert("Se ha enviado un enlace de recuperación al correo ingresado.");
+      this.reset();
+    }
+  });
 });
 
