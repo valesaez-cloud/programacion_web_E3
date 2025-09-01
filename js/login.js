@@ -1,42 +1,48 @@
-$(document).ready(function () {
-    $("#loginForm").submit(function (event) {
-        event.preventDefault();
-        let isValid = true;
+$(function () {
+  $("#loginForm").on("submit", function (event) {
+    event.preventDefault();
 
-        $(".error-message").hide();
-        $(".form-control").removeClass("is-invalid");
+    let isValid = true;
 
-        // Validar campo Correo (solo si está vacío)
-        if ($("#correo").val().trim() === "") {
-            $("#correo").addClass("is-invalid");
-            $("#correo").next(".error-message").text("El correo es obligatorio.").show();
-            isValid = false;
-        }
+    // limpiar estado previo
+    $(".error-message").hide().text("");
+    $(".form-control").removeClass("is-invalid");
 
-        // Validar campo Contraseña (solo si está vacío)
-        if ($("#clave").val().trim() === "") {
-            $("#clave").addClass("is-invalid");
-            $("#clave").next(".error-message").text("La contraseña es obligatoria.").show();
-            isValid = false;
-        }
+    // --- validar correo ---
+    const $mail = $("#mail");
+    const correo = $mail.val().trim();
 
-        // Validar campo Contraseña tenga 7 caracteres
-        if ($("#clave").val().trim() != "") {
-            var clave = $("#clave").val().trim();
-            
-            if(clave.length < 7)
-            {
-                $("#clave").addClass("is-invalid");
-                $("#clave").next(".error-message").text("La contraseña debe tener 7 caracteres").show();
-                 isValid = false;
-            } 
-            
-        }
+    if (correo === "") {
+      $mail.addClass("is-invalid");
+      $mail.next(".error-message").text("El correo es obligatorio.").show();
+      isValid = false;
+    } else {
+      // validación simple de formato
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!re.test(correo)) {
+        $mail.addClass("is-invalid");
+        $mail.next(".error-message").text("Ingresa un correo válido.").show();
+        isValid = false;
+      }
+    }
 
-        // Si ambos campos están llenos, mostrar mensaje
-        if (isValid) {
-            alert("Inicio de sesión exitoso.");
-            $("#loginForm")[0].reset();
-        }
-    });
+    // --- validar contraseña ---
+    const $clave = $("#clave");
+    const clave = $clave.val().trim();
+
+    if (clave === "") {
+      $clave.addClass("is-invalid");
+      $clave.next(".error-message").text("La contraseña es obligatoria.").show();
+      isValid = false;
+    } else if (clave.length !== 7) {          // exactamente 7 (ajusta si el profe pidió mínimo)
+      $clave.addClass("is-invalid");
+      $clave.next(".error-message").text("La contraseña debe tener 7 caracteres.").show();
+      isValid = false;
+    }
+
+    if (isValid) {
+      alert("Inicio de sesión exitoso.");
+      this.reset();
+    }
+  });
 });
