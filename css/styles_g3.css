@@ -176,3 +176,26 @@ footer .logo_container span {
 .error-message {
     font-size: 14px;
     display: none;
+
+}
+/* Ajusta tamaño y posición del formulario */
+.card {
+  max-width: 420px;      /* más ancho */
+  margin: 0 auto;        /* lo centra horizontalmente */
+  padding: 24px;         /* más espacio interno */
+  font-size: 1.1rem;     /* agranda un poco el texto */
+}
+
+/* Inputs un poco más grandes */
+.form-control {
+  padding: 14px;
+  font-size: 1rem;
+}
+
+/* Botón más alto */
+.btn {
+  padding: 14px;
+  font-size: 1rem;
+}
+
+    
