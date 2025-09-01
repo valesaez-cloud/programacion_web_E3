@@ -1,5 +1,5 @@
 $(function () {
-  $("#loginForm").on("submit", function (event) {
+  $("#recuperarForm").on("submit", function (event) {
     event.preventDefault();
 
     let isValid = true;
