@@ -5,8 +5,8 @@ $(function () {
     let isValid = true;
 
     // limpiar estado previo
-    $(".error-message").hide().text("");
-    $(".form-control").removeClass("is-invalid");
+    $("#recuperarForm .error-message").hide().text("");
+    $("#recuperarForm .form-control, #registroForm .form-select").removeClass("is-invalid");
 
     // === validar CORREO ===
     const $mail = $("#mail");  
