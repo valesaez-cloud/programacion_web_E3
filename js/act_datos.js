@@ -34,6 +34,16 @@ $(function () {
     const telefono  = $telefono.val().trim();
     const rol       = $rol.val().trim();
 
+    // si todo está vacío => bloquear
+    const todosVacios = [nombre, apellidos, correo, direccion, telefono, rol].every(v => v === "");
+    if (todosVacios) {
+      if ($msg.length) {
+        $msg.text("Primero debes modificar algo antes de actualizar.").show();
+      } else {
+        alert("Primero debes modificar algo antes de actualizar.");
+      }
+      return;
+    }
     // validar SOLO si el campo tiene algo escrito
     if (nombre && nombre.length < 2) err($nombre, "El nombre debe tener al menos 2 caracteres.");
     if (apellidos && apellidos.length < 2) err($apellidos, "Los apellidos deben tener al menos 2 caracteres.");
