@@ -44,6 +44,15 @@ $(function () {
       }
       return;
     }
+    // helper error
+    let ok = true;
+    function err($el, msg) {
+      if (!$el || !$el.length) return;
+      $el.addClass("is-invalid");
+      const $err = $el.next(".error-message");
+      if ($err.length) $err.text(msg).show();
+      ok = false;
+    }
     // validar SOLO si el campo tiene algo escrito
     if (nombre && nombre.length < 2) err($nombre, "El nombre debe tener al menos 2 caracteres.");
     if (apellidos && apellidos.length < 2) err($apellidos, "Los apellidos deben tener al menos 2 caracteres.");
