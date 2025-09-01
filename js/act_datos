@@ -1,4 +1,3 @@
-// js/actualizar_datos.js
 $(function () {
   console.log("actualizar_datos.js cargado");
 
