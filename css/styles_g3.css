@@ -503,8 +503,6 @@ footer .logo_container span {
   color: #ffffff;
   text-decoration: underline;
 }
-
-
 /* Perfil*/
 .perfil-container {
     background-color: #222;    
@@ -515,3 +513,5 @@ footer .logo_container span {
     text-align: center;
     width: 500px;
 }
+.is-invalid { border: 1px solid #dc3545 !important; }
+.error-message { color:#dc3545; font-size:.9rem; margin-top:4px; display:none; }
