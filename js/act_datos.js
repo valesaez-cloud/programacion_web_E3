@@ -1,4 +1,3 @@
-// js/actualizar_datos.js
 $(function () {
   const $form = $("#actualizarForm");
   if ($form.length === 0) return;
@@ -11,8 +10,9 @@ $(function () {
     $form.find(".error-message").hide().text("");
     $form.find(".form-control, .form-select").removeClass("is-invalid");
 
-    // helper
-    function err($el, msg){
+    // helper para marcar error
+    function err($el, msg) {
+      if (!$el || !$el.length) return;
       $el.addClass("is-invalid");
       const $err = $el.next(".error-message");
       if ($err.length) $err.text(msg).show();
@@ -37,29 +37,19 @@ $(function () {
     // si todo está vacío => bloquear
     const todosVacios = [nombre, apellidos, correo, direccion, telefono, rol].every(v => v === "");
     if (todosVacios) {
-      if ($msg.length) {
-        $msg.text("Primero debes modificar algo antes de actualizar.").show();
-      } else {
-        alert("Primero debes modificar algo antes de actualizar.");
-      }
+      alert("Primero debes modificar algo antes de actualizar.");
       return;
     }
-    // helper error
-    let ok = true;
-    function err($el, msg) {
-      if (!$el || !$el.length) return;
-      $el.addClass("is-invalid");
-      const $err = $el.next(".error-message");
-      if ($err.length) $err.text(msg).show();
-      ok = false;
-    }
+
     // validar SOLO si el campo tiene algo escrito
     if (nombre && nombre.length < 2) err($nombre, "El nombre debe tener al menos 2 caracteres.");
     if (apellidos && apellidos.length < 2) err($apellidos, "Los apellidos deben tener al menos 2 caracteres.");
+
     if (correo) {
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!re.test(correo)) err($mail, "Ingresa un correo válido.");
     }
+
     if (direccion && direccion.length < 5) err($direccion, "La dirección es demasiado corta.");
     if (telefono && !/^\d{8,15}$/.test(telefono)) err($telefono, "Solo dígitos (8–15).");
     if (rol && !["1","2","3","4"].includes(rol)) err($rol, "Selecciona un rol válido.");
