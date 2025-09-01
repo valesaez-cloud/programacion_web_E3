@@ -514,4 +514,9 @@ footer .logo_container span {
     border-color: #FFA500;
 }
 .is-invalid { border: 1px solid #dc3545 !important; }
-.error-message { color:#dc3545; font-size:.9rem; margin-top:4px; display:none; }
+.error-message { 
+  color: #dc3545; 
+  font-size: .9rem; 
+  margin-top: 4px; 
+  display: none; 
+}
