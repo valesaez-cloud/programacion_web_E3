@@ -507,8 +507,7 @@ footer .logo_container span {
 
 /* Perfil*/
 .perfil-container {
-    background-color: #000;
-    position: center;
+    background-color: #222;    
     align-items: center;
     padding: 20px 30px;
     border-radius: 8px;
