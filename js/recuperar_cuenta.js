@@ -9,13 +9,13 @@ $(document).ready(function () {
         // Validar campo Correo (solo si está vacío)
         if ($("#mail").val().trim() === "") {
             $("#mail").addClass("is-invalid");
-            $("#mail").next(".error-message").text("El mail es obligatorio.").show();
+            $("#mail").next(".error-message").text("El correo es obligatorio.").show();
             isValid = false;
         }
 
         // Si todo está bien
         if (isValid) {
-            alert("Se ha enviado un enlace de recuperación al mail ingresado.");
+            alert("Se ha enviado un enlace de recuperación al correo ingresado.");
             $("#recuperarForm")[0].reset();
         }
     });
