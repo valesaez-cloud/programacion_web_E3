@@ -1,6 +1,10 @@
+console.log("recu_cuenta.s cargado"
+
 $(function () {
-  $("#recuperarForm").on("submit", function (event) {
-    event.preventDefault();
+  $("#recuperarForm").on("submit", 
+    if ($form.length ===0) {
+    console.warn("no se encontro");
+    return;
 
     let isValid = true;
 
