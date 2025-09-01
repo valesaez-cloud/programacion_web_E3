@@ -15,6 +15,7 @@ $(function () {
     const $direccion = $("#direccion");
     const $telefono  = $("#telefono");
     const $rol       = $("#rol");
+    const $clave     = $("#clave");
 
     const nombre    = $nombre.val().trim();
     const apellidos = $apellidos.val().trim();
@@ -22,7 +23,8 @@ $(function () {
     const direccion = $direccion.val().trim();
     const telefono  = $telefono.val().trim();
     const rol       = $rol.val().trim();
-
+    const clave     = $clave.val().trim();
+    
     // helper para marcar error
     function err($el, msg){
       $el.addClass("is-invalid");
