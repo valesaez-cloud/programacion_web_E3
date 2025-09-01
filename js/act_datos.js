@@ -1,26 +1,25 @@
+// js/actualizar_datos.js
 $(function () {
-  console.log("actualizar_datos.js cargado");
-
-  const $form = $("#actualizarForm");   // <form id="actualizarForm">
+  const $form = $("#actualizarForm");
   if ($form.length === 0) return;
 
   $form.on("submit", function (e) {
     e.preventDefault();
     let ok = true;
 
-    // limpiar estado previo
+    // limpiar errores previos
     $form.find(".error-message").hide().text("");
     $form.find(".form-control, .form-select").removeClass("is-invalid");
 
-    // helper para marcar error
-    function err($el, msg) {
+    // helper
+    function err($el, msg){
       $el.addClass("is-invalid");
       const $err = $el.next(".error-message");
       if ($err.length) $err.text(msg).show();
       ok = false;
     }
 
-    // referencias
+    // campos
     const $nombre    = $("#nombre");
     const $apellidos = $("#apellidos");
     const $mail      = $("#mail");
@@ -28,7 +27,6 @@ $(function () {
     const $telefono  = $("#telefono");
     const $rol       = $("#rol");
 
-    // valores (trim)
     const nombre    = $nombre.val().trim();
     const apellidos = $apellidos.val().trim();
     const correo    = $mail.val().trim();
@@ -36,26 +34,21 @@ $(function () {
     const telefono  = $telefono.val().trim();
     const rol       = $rol.val().trim();
 
-    // VALIDAR SOLO SI HAY ALGO ESCRITO
-    if (nombre && nombre.length < 2)        err($nombre, "Mínimo 2 caracteres.");
-    if (apellidos && apellidos.length < 2)  err($apellidos, "Mínimo 2 caracteres.");
-
+    // validar SOLO si el campo tiene algo escrito
+    if (nombre && nombre.length < 2) err($nombre, "El nombre debe tener al menos 2 caracteres.");
+    if (apellidos && apellidos.length < 2) err($apellidos, "Los apellidos deben tener al menos 2 caracteres.");
     if (correo) {
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!re.test(correo)) err($mail, "Correo no válido.");
+      if (!re.test(correo)) err($mail, "Ingresa un correo válido.");
     }
-
-    if (direccion && direccion.length < 5)  err($direccion, "Dirección demasiado corta.");
-    if (telefono && !/^\d{8,15}$/.test(telefono))
-      err($telefono, "Solo dígitos, entre 8 y 15.");
-
-    if (rol && !["1","2","3","4"].includes(rol))
-      err($rol, "Rol no válido.");
+    if (direccion && direccion.length < 5) err($direccion, "La dirección es demasiado corta.");
+    if (telefono && !/^\d{8,15}$/.test(telefono)) err($telefono, "Solo dígitos (8–15).");
+    if (rol && !["1","2","3","4"].includes(rol)) err($rol, "Selecciona un rol válido.");
 
     // éxito
     if (ok) {
       alert("Datos actualizados correctamente.");
-      // this.reset(); // si NO quieres vaciar el formulario, deja comentado
+      this.reset(); // si no quieres resetear, quita esta línea
     }
   });
 });
