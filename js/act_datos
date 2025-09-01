@@ -47,7 +47,7 @@ $(function () {
     // éxito
     if (ok) {
       alert("Datos actualizados correctamente.");
-      this.reset(); // resetear
+      this.reset(); // si no quieres resetear, quita esta línea
     }
   });
 });
