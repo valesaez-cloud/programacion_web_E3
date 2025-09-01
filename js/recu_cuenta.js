@@ -8,8 +8,8 @@ $(function () {
     let isValid = true;
 
     // limpiar estado previo
-    $form.find("#.error-message").hide().text("");
-    $form.find("#.form-control").removeClass("is-invalid");
+    $form.find(".error-message").hide().text("");
+    $form.find(".form-control").removeClass("is-invalid");
 
     // === validar CORREO ===
     const $mail = $("#mail");  
