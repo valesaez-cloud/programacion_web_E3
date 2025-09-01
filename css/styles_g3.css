@@ -197,5 +197,39 @@ footer .logo_container span {
   padding: 14px;
   font-size: 1rem;
 }
+/* Inputs oscuros */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  background: #0f0f0f;
+  color: #f2f2f2;
+  font-size: 1rem;
+}
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  color: #888;
+}
 
+/* Botón gamer */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #6aa0ff, #3c77ff);
+  color: #0b1020;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform .2s, filter .2s;
+}
+button:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
     
