@@ -6,7 +6,7 @@ $(function () {
 
     // limpiar estado previo
     $("#recuperarForm .error-message").hide().text("");
-    $("#recuperarForm .form-control, #registroForm .form-select").removeClass("is-invalid");
+    $("#recuperarForm .form-control, #recuperarForm .form-select").removeClass("is-invalid");
 
     // === validar CORREO ===
     const $mail = $("#mail");  
