@@ -56,6 +56,11 @@ $(function () {
     // Rol (no vacío)
     if (!rol) err($rol, "Selecciona un rol.");
 
+    // Contraseña (mín 7)
+    if (!clave)              err(clave, "La contraseña es obligatoria.");
+    else if (clave.length < 7) err(clave, "La contraseña deben tener al menos 7 digitos.");
+
+
     // Si todo ok
     if (ok) {
       alert("Registro se realiza con éxito.");
