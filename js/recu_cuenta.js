@@ -1,11 +1,10 @@
-console.log("recu_cuenta.js cargado"
-
 $(function () {
-  $("#recuperarForm").on("submit", 
-    if ($form.length ===0) {
-    console.warn("no se encontro");
-    return;
+  const $form = $("#recuperarForm");
+  if ($form.length === 0) return;
 
+  $form.on("submit", function (e) {
+    e.preventDefault();
+    let ok = true;
     let isValid = true;
 
     // limpiar estado previo
