@@ -506,12 +506,10 @@ footer .logo_container span {
 /* Perfil*/
 .perfil-container {
     background-color: #222;    
-    position: center;
-    padding: 20px 70px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 500px;
+    margin: 0 auto;
 }
 .is-invalid { border: 1px solid #dc3545 !important; }
 .error-message { color:#dc3545; font-size:.9rem; margin-top:4px; display:none; }
