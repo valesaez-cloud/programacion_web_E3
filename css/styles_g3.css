@@ -443,7 +443,7 @@ footer .logo_container span {
 #registroForm .form-select {
   width: 100%;
   padding: 12px 14px;
-  margin: 10px 0 14px;
+  margin: 8px 0 14px;
   border: 1px solid #3a3a3a;
   border-radius: 10px;
   background: #0f0f0f;
@@ -469,7 +469,7 @@ footer .logo_container span {
 #registroForm input[type="submit"] {
   width: 100%;
   padding: 12px;
-  margin-top: 10px;
+  margin-top: 12px;
   border: none;
   border-radius: 10px;
   background: linear-gradient(180deg, #3ad167, #1aa14a); /* verde */
