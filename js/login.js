@@ -9,7 +9,7 @@ $(function () {
     $(".form-control").removeClass("is-invalid");
 
     // === validar CORREO ===
-    const $mail = $("#mail");   // <- aquí estaba el problema
+    const $mail = $("#mail");  
     const correo = $mail.val().trim();
 
     if (correo === "") {
@@ -46,3 +46,4 @@ $(function () {
     }
   });
 });
+
