@@ -503,3 +503,22 @@ footer .logo_container span {
   color: #ffffff;
   text-decoration: underline;
 }
+
+
+/* Perfil*/
+.perfil-container {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Hace la foto circular */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio */
+    margin-bottom: 15px;
+}
