@@ -27,8 +27,8 @@ $(function () {
 
         // Si todo está bien
         if (isValid) {
-            alert("Se ha enviado un enlace de recuperación al correo ingresado.");
-            $("#recuperarForm")[0].reset();
+          alert("Se ha enviado un enlace de recuperación al correo ingresado.");
+          this.reset();
         }
     });
 });
