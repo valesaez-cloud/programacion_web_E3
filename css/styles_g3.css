@@ -434,10 +434,7 @@ footer .logo_container span {
 /* Inputs oscuros */
 input[type="email"],
 input[type="password"],
-input[type="nombre"],
-input[type="apellidos"],
-input[type="direccion"]
-input[type="telefono"]
+input[type="text"]
 input[type="rol"]
 {
   width: 100%;
@@ -450,11 +447,8 @@ input[type="rol"]
   font-size: 1rem;
 }
 input[type="email"]::placeholder,
-input[type="password"]::placeholder 
-input[type="nombre"]::placeholder,
-input[type="apellidos"]::placeholder,
-input[type="direccion]::placeholder,
-input[type="telefono"]::placeholder, 
+input[type="password"]::placeholder,
+input[type="text"]::placeholder,
 input[type="rol"]::placeholder
 {
   color: #888;
