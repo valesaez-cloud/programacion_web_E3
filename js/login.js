@@ -34,7 +34,7 @@ $(function () {
       $clave.addClass("is-invalid");
       $clave.next(".error-message").text("La contraseña es obligatoria.").show();
       isValid = false;
-    } else if (clave.length !== 7) {          // exactamente 7 (ajusta si el profe pidió mínimo)
+    } else if (clave.length !== 7) {         
       $clave.addClass("is-invalid");
       $clave.next(".error-message").text("La contraseña debe tener 7 caracteres.").show();
       isValid = false;
@@ -46,3 +46,4 @@ $(function () {
     }
   });
 });
+
