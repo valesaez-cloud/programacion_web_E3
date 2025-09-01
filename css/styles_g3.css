@@ -520,3 +520,132 @@ footer .logo_container span {
   margin-top: 4px; 
   display: none; 
 }
+/* Variables suaves (opcional) */
+:root{
+  --g3-bg:#0f0f0f;
+  --g3-fg:#f2f2f2;
+  --g3-bd:#3a3a3a;
+  --g3-acc1:#6aa0ff;
+  --g3-acc2:#3c77ff;
+  --g3-err:#dc3545;
+}
+
+.login-zone{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+/* TARJETA visual donde va el form */
+.card{
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 0 auto;
+  max-width: 520px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.35);
+}
+
+/* Títulos dentro del form (si los usas) */
+.card h1,.card h2,.card h3{
+  margin: 0 0 16px;
+  color: #fff;
+}
+
+/*
+   INPUTS/BOTONES por FORMULARIO
+ */
+#loginForm .form-control,
+#registroForm .form-control,
+#actualizarForm .form-control,
+#recuperarForm .form-control,
+#registroForm .form-select,
+#actualizarForm .form-select,
+#recuperarForm .form-select{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  margin: 10px 0 14px;          /* separación vertical */
+  border: 1px solid var(--g3-bd);
+  border-radius: 10px;
+  background: var(--g3-bg);
+  color: var(--g3-fg);
+  font-size: 1rem;
+}
+
+#loginForm .form-control:focus,
+#registroForm .form-control:focus,
+#actualizarForm .form-control:focus,
+#recuperarForm .form-control:focus,
+#registroForm .form-select:focus,
+#actualizarForm .form-select:focus,
+#recuperarForm .form-select:focus{
+  outline: none;
+  border-color: var(--g3-acc1);
+  box-shadow: 0 0 0 3px rgba(106,160,255,.25);
+}
+
+/* Botones */
+#loginForm .btn,
+#registroForm .btn,
+#actualizarForm .btn,
+#recuperarForm .btn{
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#loginForm .btn-primary,
+#registroForm .btn-primary,
+#actualizarForm .btn-primary,
+#recuperarForm .btn-primary,
+#registroForm .btn-success,
+#actualizarForm .btn-success{
+  background: linear-gradient(180deg, var(--g3-acc1), var(--g3-acc2));
+  color: #0b1020;
+}
+#loginForm .btn:hover,
+#registroForm .btn:hover,
+#actualizarForm .btn:hover,
+#recuperarForm .btn:hover{
+  filter: brightness(1.08);
+}
+
+/* Enlaces secundarios debajo del botón (login) */
+.auth-links{
+  margin-top: 10px;
+}
+.auth-links a{
+  display:block;
+  text-decoration:none;
+  color:#a5b4ff;
+  margin-top:8px;
+}
+.auth-links a:hover{ text-decoration: underline; }
+
+/* MENSAJES DE ERROR*/
+.error-message{
+  display: none;                /* el JS hace .show() al validar */
+  color: var(--g3-err);
+  font-size: .9rem;
+  margin-top: -6px;             /* queda pegado al input */
+  margin-bottom: 8px;
+}
+.form-control.is-invalid,
+.form-select.is-invalid{
+  border: 1px solid var(--g3-err) !important;
+  box-shadow: 0 0 0 3px rgba(220,53,69,.25) !important;
+}
+
+@media (max-width: 480px){
+  .card{ padding: 18px; }
+  #loginForm .form-control,
+  #registroForm .form-control,
+  #actualizarForm .form-control,
+  #recuperarForm .form-control{ font-size: .95rem; }
+}
