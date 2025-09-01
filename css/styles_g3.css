@@ -522,3 +522,10 @@ footer .logo_container span {
     object-fit: cover; /* Asegura que la imagen cubra el espacio */
     margin-bottom: 15px;
 }
+.is-invalid { border: 1px solid #dc3545; }
+.error-message {
+  color: #dc3545;
+  font-size: .9rem;
+  margin-top: 4px;
+  display: none;
+}
