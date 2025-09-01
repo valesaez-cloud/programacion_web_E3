@@ -432,44 +432,56 @@ footer .logo_container span {
   font-size: 1rem;
 }
 /* Inputs oscuros */
-input[type="email"],
-input[type="password"],
-input[type="text"]
-input[type="rol"]
-{
+#registroForm input[type="text"],
+#registroForm input[type="email"],
+#registroForm input[type="password"],
+#registroForm input[type="tel"],
+#registroForm input[type="number"],
+#registroForm select,
+#registroForm textarea,
+#registroForm .form-control,
+#registroForm .form-select {
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
+  padding: 12px 14px;
+  margin: 10px 0 14px;
   border: 1px solid #3a3a3a;
   border-radius: 10px;
   background: #0f0f0f;
   color: #f2f2f2;
   font-size: 1rem;
-}
-input[type="email"]::placeholder,
-input[type="password"]::placeholder,
-input[type="text"]::placeholder,
-input[type="rol"]::placeholder
-{
-  color: #888;
+  box-sizing: border-box;
 }
 
-/* Botón gamer */
-button {
+#registroForm input::placeholder,
+#registroForm textarea::placeholder { color: #888; }
+
+#registroForm input:focus,
+#registroForm select:focus,
+#registroForm textarea:focus {
+  outline: none;
+  border-color: #6aa0ff;
+  box-shadow: 0 0 0 3px rgba(106,160,255,.25);
+}
+
+/* Botón Registrar del registro */
+#registroForm .btn,
+#registroForm button,
+#registroForm input[type="submit"] {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(180deg, #6aa0ff, #3c77ff);
-  color: #0b1020;
+  background: linear-gradient(180deg, #3ad167, #1aa14a); /* verde */
+  color: #06140c;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
   transition: transform .2s, filter .2s;
 }
-button:hover {
-  filter: brightness(1.1);
-  transform: scale(1.03);
+#registroForm .btn:hover,
+#registroForm button:hover,
+#registroForm input[type="submit"]:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
 }
-        
